@@ -8,36 +8,28 @@
 </head>
 <body>
     <header>
-        <h1>DIY Art Bag Store - Payment</h1>
+        <h1>Complete Your Payment</h1>
     </header>
     <section id="payment">
-        <h2>Complete Your Payment</h2>
-        <p>Please scan the QR code below to complete your payment.</p>
         <div class="payment-container">
-            <div class="payment-option">
+            <h2>Your Selected Colors</h2>
+            <p>Handle: <span id="handle"></span></p>
+            <p>Outer: <span id="outer"></span></p>
+            <p>Inner: <span id="inner"></span></p>
+            <div>
                 <h3>WeChat Pay</h3>
-                <img src="images/wechat_payment.jpg" alt="WeChat Pay" class="payment-img">
+                <img src="images/wechat_payment.jpg" width="200">
             </div>
-            <div class="payment-option">
-                <h3>Alipay</h3>
-                <img src="images/alipay_payment.jpg" alt="Alipay" class="payment-img">
+            <div>
+                <h3>AliPay</h3>
+                <img src="images/alipay_payment.jpg" width="200">
             </div>
         </div>
     </section>
+    <script>
+        document.getElementById('handle').innerText = localStorage.getItem('handleColor') || 'Not Selected';
+        document.getElementById('outer').innerText = localStorage.getItem('outerColor') || 'Not Selected';
+        document.getElementById('inner').innerText = localStorage.getItem('innerColor') || 'Not Selected';
+    </script>
 </body>
-<style>
-    .payment-container {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        margin-top: 20px;
-    }
-    .payment-option {
-        text-align: center;
-    }
-    .payment-img {
-        width: 200px;
-        height: auto;
-    }
-</style>
 </html>
